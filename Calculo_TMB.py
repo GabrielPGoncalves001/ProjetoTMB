@@ -1,29 +1,82 @@
 from time import sleep
 
-nome = str(input("Digite seu nome: "))
+def idade():
+    while
 idade = int(input("Digite sua idade: "))
 peso = float(input("Digite seu peso (apenas o número, sem a unidade de medida): "))
 altura = int(input("Digite sua altura em cm: "))
 genero = str(input("Digite seu gênero: "))
 
-print(f"Certo. De acordo com sua resposta, seu nome é {nome};\nSua idade é {idade};\nSeu peso é {peso};\nSua altura é {altura};\nPor fim, seu gênero é {genero}.")
+print(f"Certo. De acordo com suas repostas, \nSua idade é {idade};\nSeu peso é {peso};\nSua altura é {altura};\nPor fim, seu gênero é {genero}.")
 sleep(1)
 
-print("Com estes dados coletados, vou fazer para você a fórmula do cálculo TMB (Taxa Metabólica Basal).\n Existem diversas fórmulas, a que vou usar é a de Harris-Benedict, a mais usada.\n Mas óbviamente, só um profissional da área de nutrição pode te dar resultados mais precisos.\n O calculo é: 655 + (9,6 x Peso em kg) + (1,8 x altura em cm) - (4,7 x idade) para MULHERES\n Para homens seria 66 + (13,7 x Peso em kg) + (5 x altura em cm) - (6,8 x idade).\n Bom, bora lá")
-sleep(1)
+print("Com estes dados coletados, vou fazer para você a fórmula do cálculo TMB (Taxa Metabólica Basal).\n Existem diversas fórmulas, a que vou u sar é a de Harris-Benedict, a mais usada.\n Mas óbviamente, só um profissional da área de nutrição pode te dar resultados mais precisos.")
+sleep(2)
+print("O calculo é: 655 + (9,56 x Peso em kg) + (1,85 x altura em cm) - (4,68 x idade) para mulheres")
+print("Para homens seria 66 + (13,75 x Peso em kg) + (5 x altura em cm) - (6,75 x idade).")
+
+
+
+
+
+
+
 
 def Masculino():
-    print(f'66 + (13,7 * {peso}) + (5 x {altura}) - (6,8 x {idade})')
-    resultado_peso = 13.7 * peso
-    resultado_altura 5 * altura
-    resultado_idade = 6.8 * idade
-    sleep(1)
+    print("Enfim, já que seu gênero é masculino, a fórmula para seu TMB será:")
+    sleep(2)
+    print(f'66 + (13,75 * {peso}) + (5 x {altura}) - (6,75 x {idade})')
+    
+    resultado_peso = 13.75 * peso
+    resultado_altura = 5 * altura
+    resultado_idade = 6.75 * idade
+    
     sleep(1.5)
-    print(f"65 + {resultado_peso} + {resultado_altura} - {resultado_idade}")
+    
+    print(f"Aqui os resultados de cada etapa: \n66 + {resultado_peso} + {resultado_altura} - {resultado_idade:.2f}")
+    
     resultado_final = 66 + resultado_peso + resultado_altura - resultado_idade
-    print(f"Seu TMB é: {round(resultado_final, 2)}!")
+    contador = 3
+    print("Seu TMB é...")
+    
+    while contador >= 1:
+        print(contador)
+        sleep(1)
+        contador -= 1
+        
+    print(f"Aproximadamente: {resultado_final:.2f}kcal/dia!")
 
+
+
+
+
+def Feminino():
+    print("Enfim, já que seu gênero é feminino, a fórmula para seu TMB será:")
+    sleep(2)
+    print(f'655 + (9,56 * {peso}) + (1,85 x {altura}) - (4,68 x {idade})')
+    
+    resultado_peso = 9.56 * peso
+    resultado_altura = 1.85 * altura
+    resultado_idade = 4.68 * idade
+    
+    sleep(1.5)
+    
+    print(f"Aqui os resultados de cada etapa: \n655 + {resultado_peso} + {resultado_altura} - {resultado_idade:.2f}")
+    
+    resultado_final = 655 + resultado_peso + resultado_altura - resultado_idade
+    
+    contador = 3
+    print("Seu TMB é...")
+    while contador >= 1:
+        print(contador)
+        sleep(1)
+        contador -= 1
+        
+    print(f"Aproximadamente: {resultado_final:.2f}kcal/dia!")
 
 if genero.lower() == 'masculino':
-    Execut Masculino
+    Masculino()
+elif genero.lower() == 'feminino':
+    Feminino()    
+
     
